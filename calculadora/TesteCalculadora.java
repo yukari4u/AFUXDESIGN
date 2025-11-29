@@ -5,12 +5,23 @@ public class TesteCalculadora {
     public static void main(String[] args){
         Calculadora calc = new Calculadora();
 
-        calc.calc(2,3,"+");
-        calc.calc(10,4,"-");
-        calc.calc(3,5,"*");
-        calc.calc(8,2,"/");
-        calc.calc(8,0,"/");
-        calc.calc(5,5,"x");
+        System.out.println(calc.calcular(2,3,"+"));
+        System.out.println(calc.calcular(10,4,"-"));
+        System.out.println(calc.calcular(3,5,"*"));
+        System.out.println(calc.calcular(8,2,"/"));
+        System.out.println(calc.calcular(8,0,"/"));
+        System.out.println(calc.calcular(5,5,"x"));
 
+        try {
+            System.out.println(calc.calcular(8, 0, "/")); //exceção
+        } catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+
+        try{
+            System.out.println(calc.calcular(5,5,"x"));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
